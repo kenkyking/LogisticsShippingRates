@@ -1,11 +1,16 @@
-# Simple Interest Calculator
+#!/bin/bash
+# Kalkulator Bunga Sederhana
 
-A calculator that calculates simple interest given principal, annual rate of interest and time period in years.
+echo "Masukkan pokok pinjaman:"
+read principal
 
-## Input:
-   * p, principal amount
-   * t, time period in years
-   * r, annual rate of interest
+echo "Masukkan suku bunga (dalam persen):"
+read rate
 
-## Output
-   * simple interest = p*t*r
+echo "Masukkan periode waktu (dalam tahun):"
+read time
+
+# Rumus bunga sederhana: Bunga = Pokok * Suku Bunga * Waktu / 100
+interest=$(echo "$principal * $rate * $time / 100" | bc -l)
+
+echo "Bunga sederhana yang dihasilkan adalah: $interest"
